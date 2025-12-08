@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDN PASAWAHAN 08</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+
+    background-image: url('pas8.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* ====== JUDUL 3D BERKEDIP ====== */
+.title {
+    font-size: 55px;
+    font-weight: 900;
+    margin-top: 1px;
+    color: #fff;
+    text-shadow:
+        0px 3px 0px #0b2b49,
+        0px 6px 0px #0a2238,
+        0px 9px 10px rgba(0,0,0,0.6),
+        0 0 15px #00e1ff,
+        0 0 30px #00e1ff;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00fff2, 0 0 30px #00fff2; }
+    to   { text-shadow: 0 0 10px yellow, 0 0 30px yellow; }
+}
+
+/* ====== MARQUEE ====== */
+.marquee {
+    margin-top: 5px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+/* ====== NAVBAR ====== */
+nav {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 10px;
+    backdrop-filter: blur(5px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #00eaff;
+}
+
+/* ====== FOTO KEPSEK ====== */
+.kepsek {
+    color: #fff;
+    text-shadow: 0 0 8px #000;
+    font-weight: bold;
+    
+}
+
+.kepsek img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.nama-kep {
+    color: #fff;
+    text-shadow: 0 0 8px #000;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: auto;
+}
+
+.nip {
+    color: #fff;
+    text-shadow: 0 0 8px #000;
+    font-weight: bold;
+    font-size: 15px;
+}
+/* ====== BIODATA GURU HORIZONTAL ====== */
+.guru-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 30px auto;
+    max-width: 1100px;
+}
+
+.guru-card {
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.guru-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
+    transition: 0.3s;
+}
+
+.guru-card img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #00eaff;
+}
+
+/* NAMA GURU GARIS BAWAH */
+.guru-card .nama {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+    
+}
+
+/* NIP lebih dekat, rapi */
+.guru-card .nip {
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<!-- Judul -->
+<div class="title">SDN PASAWAHAN 08</div>
+
+<!-- Marquee -->
+<div class="marquee">
+    <marquee> CERDAS • BERIMAN • BERAKHLAK • BERPRESTASI • MANDIRI </marquee>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <!-- <li><a href="guru.html">Biodata Guru</a></li> -->
+        <li><a href="struktur.html">Struktur Sekolah</a></li>
+        <li><a href="eskul.html">Eskul</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="ppdb.html">PPDB</a></li>
+    </ul>
+</nav>
+
+<!-- Kepala Sekolah -->
+<div class="kepsek">
+    <img src="kepsek.jpeg" alt="Kepala Sekolah">
+    <h3>Kepala Sekolah</h3>
+        <div class="nama-kep">Nina Mardiana, S.Pd.SD., M.Pd</div>
+        <div class="nip">NIP: 198103152009012001</div>
+</div>
+
+<!-- BIODATA GURU -->
+<h2 style="color:white; text-shadow:0 0 8px black; margin-top:20px;">
+    Biodata Guru
+</h2>
+
+<div class="guru-wrapper">
+
+    <!-- CONTOH FORMAT GURU -->
+    <div class="guru-card">
+        <img src="guru1a.jpeg">
+        <h3>Guru 1A</h3>
+        <div class="nama">Ida Sonia, S.Pd</div>
+        <div class="nip">NIP: 196708281993072000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru1b.jpeg">
+        <h3>Guru 1B</h3>
+        <div class="nama">Nur Habibah, S.Pd</div>
+        <div class="nip">NIP: 19xxxxxxx</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru2a.jpeg">
+        <h3>Guru 2A</h3>
+        <div class="nama">Yusri Syadian Merisa, S.Pd</div>
+        <div class="nip">NIP: 199802282022212000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru2b.jpeg">
+        <h3>Guru 2B</h3>
+        <div class="nama">Ratna Candra Dewi, S.Pd</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru3a.jpeg">
+        <h3>Guru 3A</h3>
+        <div class="nama">Soni Safutra</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru3b.jpeg">
+        <h3>Guru 3B</h3>
+        <div class="nama">Lutvi Mawar Dinnur, S.E., M.Pd</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru3c.jpeg">
+        <h3>Guru 3C</h3>
+        <div class="nama">Siti Mariyam, S.Pd.SD</div>
+        <div class="nip">NIP: 196608041992122000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru4a.jpeg">
+        <h3>Guru 4A</h3>
+        <div class="nama">Anggia Widianingsih, S.Pd</div>
+        <div class="nip">NIP: 199604272023212000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru4b.jpeg">
+        <h3>Guru 4B</h3>
+        <div class="nama">Fatmina Asri, S.Pd</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru4c.jpeg">
+        <h3>Guru 4C</h3>
+        <div class="nama">Sani Fitriani, S.Pd. Gr</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru5a.jpeg">
+        <h3>Guru 5A</h3>
+        <div class="nama">Rostuti, S.Pd</div>
+        <div class="nip">NIP: 196612231988042000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru5b.jpeg">
+        <h3>Guru 5B</h3>
+        <div class="nama">Nur Chikma Ariyanti, S.Pd</div>
+        <div class="nip">NIP: 199008132023212000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru6a.jpeg">
+        <h3>Guru 6A</h3>
+        <div class="nama">Dewi Resnawati, S.Pd</div>
+        <div class="nip">NIP: 197512162024212000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="guru6b.jpeg">
+        <h3>Guru 6B</h3>
+        <div class="nama">Endah Nur Endah, S.Pd</div>
+        <div class="nip">NIP: 198011162022212000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="gurupjok1.jpeg">
+        <h3>Guru PJOK 1</h3>
+        <div class="nama">Raden Dadi Suhardiman</div>
+        <div class="nip">NIP: 196608291988031000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="pjok2.jpeg">
+        <h3>Guru PJOK 2</h3>
+        <div class="nama">Redi Hadiansah, S.Pd,GR, MG</div>
+        <div class="nip">NIP: 198102102023211000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="pai1.jpeg">
+        <h3>Guru PAI 1</h3>
+        <div class="nama">Sri Mulyani Awaliyah, S.Pd.I</div>
+        <div class="nip">NIP: 198109302023212000</div>
+    </div>
+
+    <div class="guru-card">
+        <img src="pai2.jpeg">
+        <h3>Guru PAI 2</h3>
+        <div class="nama">Sania Nur Fadzillah, S.Pd</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="sbdp.jpeg">
+        <h3>Guru SBDP</h3>
+        <div class="nama">Moch. Rifki Gustami, S.Tr.Sn</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="opr.jpeg">
+        <h3>Operator</h3>
+        <div class="nama">Iman Ramdhani, S.Kom</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+    <div class="guru-card">
+        <img src="pjg.jpeg">
+        <h3>Penjaga</h3>
+        <div class="nama">Simin</div>
+        <div class="nip">NIP: </div>
+    </div>
+
+</div>
+
+</body>
+</html>
