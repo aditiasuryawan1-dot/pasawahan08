@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/script.js">
+
+</head>
+<body>
+     <!-- NAVBAR -->
+  <nav>
+    <div class="nav-brand">SDN Pasawahan 08</div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <ul id="navMenu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="struktur.html">Struktur</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="pengumuman.html">Pengumuman</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="kaldik.html">Kaldik</a></li>
+      <li><a href="weblink.html">Weblink</a></li>
+      <li><a href="ppdb.html">PPDB</a></li>
+    </ul>
+  </nav>
+
+  <section id="berita">
+    <h2>Berita Sekolah</h2>
+
+    <div class="grid">
+      <div class="card berita-item">
+        <img src="berita1.jpg" alt="Kegiatan Upacara" class="berita-img">
+        <div class="berita-body">
+          <div class="tanggal">5 Januari 2026</div>
+          <h4>Pelaksanaan Upacara Bendera Awal Semester</h4>
+          <p>
+            SDN Pasawahan 08 melaksanakan upacara bendera sebagai tanda dimulainya
+            kegiatan belajar mengajar semester genap dengan penuh khidmat dan disiplin.
+          </p>
+        </div>
+      </div>
+
+      <div class="card berita-item">
+        <img src="berita2.jpg" alt="Kegiatan Literasi" class="berita-img">
+        <div class="berita-body">
+          <div class="tanggal">8 Januari 2026</div>
+          <h4>Gerakan Literasi Sekolah</h4>
+          <p>
+            Peserta didik mengikuti kegiatan literasi untuk meningkatkan minat baca,
+            kemampuan berpikir kritis, dan kecintaan terhadap ilmu pengetahuan.
+          </p>
+        </div>
+      </div>
+
+      <div class="card berita-item">
+        <img src="berita3.jpg" alt="Kegiatan Ekstrakurikuler" class="berita-img">
+        <div class="berita-body">
+          <div class="tanggal">12 Januari 2026</div>
+          <h4>Kegiatan Ekstrakurikuler Berjalan Aktif</h4>
+          <p>
+            Kegiatan ekstrakurikuler dilaksanakan secara rutin sebagai wadah pengembangan
+            bakat, minat, dan keterampilan peserta didik.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>SDN Pasawahan 08</h4>
+      <p>
+        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
+        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontak Sekolah</h4>
+      <ul>
+        <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
+        <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
+        <li>Email: pasawahan08@yahoo.com</li>
+        <li>Telp: -</li>
+      </ul>
+    </div>
+
+      <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+    const links = document.querySelectorAll('#navMenu a');
+    const navHeight = document.querySelector('nav').offsetHeight;
+    const sections = document.querySelectorAll('section, .hero');
+
+    // Toggle hamburger
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Klik menu → aktif & tutup menu (mobile)
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        menu.classList.remove('active');
+      });
+    });
+
+    // Active menu saat scroll
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+      // Sticky shadow effect
+      if (window.scrollY > 10) {
+        document.querySelector('nav').classList.add('scrolled');
+      } else {
+        document.querySelector('nav').classList.remove('scrolled');
+      }
+    });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+  </script>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
+
+</body>
+</html>

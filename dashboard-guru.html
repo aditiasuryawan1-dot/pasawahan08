@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Guru | SDN Pasawahan 08</title>
+  <style>
+    :root{
+      --blue:#0b5ed7;
+      --orange:#f7931e;
+      --light:#f8f9fa;
+      --dark:#212529;
+    }
+    *{box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    body{margin:0;background:var(--light)}
+
+    /* LAYOUT */
+    .wrapper{display:flex;min-height:100vh}
+
+    /* SIDEBAR */
+    .sidebar{
+      width:240px;
+      background:linear-gradient(180deg,var(--blue),var(--orange));
+      color:white;
+      padding:20px;
+    }
+    .sidebar h3{margin-top:0;text-align:center}
+    .sidebar ul{list-style:none;padding:0;margin-top:30px}
+    .sidebar ul li{margin-bottom:12px}
+    .sidebar ul li a{
+      display:block;
+      padding:10px 14px;
+      border-radius:6px;
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+    .sidebar ul li a:hover,
+    .sidebar ul li a.active{background:rgba(255,255,255,0.25)}
+
+    /* CONTENT */
+    .content{flex:1;padding:30px}
+
+    /* HEADER */
+    .header{
+      background:white;
+      padding:16px 20px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+      margin-bottom:24px;
+    }
+    .header h2{margin:0;color:var(--blue)}
+
+    /* CARDS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    }
+    .card h4{margin-top:0;color:var(--orange)}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      .wrapper{flex-direction:column}
+      .sidebar{width:100%}
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Guru Panel</h3>
+    <ul>
+      <li><a href="#" class="active">Dashboard</a></li>
+      <li><a href="#">Profil Guru</a></li>
+      <li><a href="#">Presensi</a></li>
+      <li><a href="#">Jurnal Mengajar</a></li>
+      <li><a href="#">Pengumuman</a></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <div class="header">
+      <h2>Assalamu'alaikum, Guru</h2>
+      <p>Selamat datang di Dashboard Guru SDN Pasawahan 08</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h4>Profil Guru</h4>
+        <p>Lihat dan perbarui data pribadi guru.</p>
+      </div>
+
+      <div class="card">
+        <h4>Presensi</h4>
+        <p>Isi dan lihat riwayat presensi harian.</p>
+      </div>
+
+      <div class="card">
+        <h4>Jurnal Mengajar</h4>
+        <p>Catat kegiatan pembelajaran setiap hari.</p>
+      </div>
+
+      <div class="card">
+        <h4>Pengumuman</h4>
+        <p>Informasi internal sekolah untuk guru.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
+<section class="card">
+  <h3>Upload Berkas Guru</h3>
+
+  <form id="formBerkasGuru">
+    <label>Nama Guru</label>
+    <input type="text" id="namaGuru" required>
+
+    <label>Jenis Berkas</label>
+    <select id="jenisBerkas" required>
+      <option value="">-- Pilih --</option>
+      <option>Presensi</option>
+      <option>Jurnal Mengajar</option>
+      <option>RPP</option>
+      <option>Administrasi</option>
+    </select>
+
+    <label>Link Google Drive</label>
+    <input type="url" id="linkDrive" placeholder="https://drive.google.com/..." required>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <p style="font-size:14px;margin-top:10px">
+    📌 Upload berkas ke Google Drive terlebih dahulu, lalu tempelkan link-nya di atas.
+  </p>
+</section>
+<script>
+document.getElementById("formBerkasGuru").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const nama   = document.getElementById("namaGuru").value;
+  const jenis  = document.getElementById("jenisBerkas").value;
+  const link   = document.getElementById("linkDrive").value;
+
+  const noWA = "628XXXXXXXXXX"; // nomor WA operator / sekolah
+
+  const pesan =
+`*UPLOAD BERKAS GURU – SDN PASAWAHAN 08*
+
+Nama Guru   : ${nama}
+Jenis Berkas: ${jenis}
+Link Drive  :
+${link}
+
+Mohon dicek dan ditindaklanjuti.
+Terima kasih.`;
+
+  const url = "https://wa.me/" + noWA + "?text=" + encodeURIComponent(pesan);
+  window.open(url, "_blank");
+});
+</script>
+
+
+</body>
+</html>

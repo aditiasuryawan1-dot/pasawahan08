@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/script.js">
+
+</head>
+<body>
+     <!-- NAVBAR -->
+  <nav>
+    <div class="nav-brand">SDN Pasawahan 08</div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <ul id="navMenu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="struktur.html">Struktur</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="pengumuman.html">Pengumuman</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="kaldik.html">Kaldik</a></li>
+      <li><a href="weblink.html">Weblink</a></li>
+      <li><a href="ppdb.html">PPDB</a></li>
+    </ul>
+  </nav>
+
+<section id="ppdb" class="section ppdb-section">
+  <div class="ppdb-container">
+
+    <div class="ppdb-header">
+      <h2>Penerimaan Peserta Didik Baru</h2>
+      <p class="ppdb-tagline">
+        “Membentuk Generasi Berakhlak, Berilmu, dan Berprestasi”
+      </p>
+    </div>
+
+    <!-- INFO -->
+    <div class="ppdb-info">
+      <div class="info-card">
+        <h4>📅 Jadwal</h4>
+        <p>1 Juni – 30 Juni 2026</p>
+      </div>
+      <div class="info-card">
+        <h4>📍 Lokasi</h4>
+        <p>SDN Pasawahan 08</p>
+      </div>
+      <div class="info-card">
+        <h4>📞 Kontak</h4>
+        <p>WhatsApp Sekolah</p>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <form id="ppdbForm" class="ppdb-form">
+      <h3>Form Pendaftaran</h3>
+
+      <div class="form-group">
+        <label>Nama Lengkap Siswa</label>
+        <input type="text" id="nama" required>
+      </div>
+
+      <div class="form-group">
+        <label>NISN</label>
+        <input type="text" id="nisn">
+      </div>
+
+      <div class="form-group">
+        <label>Tempat, Tanggal Lahir</label>
+        <input type="text" id="ttl" required>
+      </div>
+
+      <div class="form-group">
+        <label>Asal Sekolah</label>
+        <input type="text" id="asal">
+      </div>
+
+      <div class="form-group">
+        <label>Nama Orang Tua / Wali</label>
+        <input type="text" id="ortu" required>
+      </div>
+
+      <div class="form-group">
+        <label>No. WhatsApp</label>
+        <input type="tel" id="hp" required>
+      </div>
+
+      <div class="form-group">
+        <label>Alamat</label>
+        <textarea id="alamat"></textarea>
+      </div>
+
+      <button type="submit" class="btn-ppdb">
+        Kirim Pendaftaran via WhatsApp
+      </button>
+    </form>
+
+    <!-- CATATAN -->
+    <div class="ppdb-note">
+      <p>
+        📎 Berkas persyaratan diunggah melalui Google Drive.  
+        Link akan dikirimkan setelah pendaftaran via WhatsApp.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+ <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>SDN Pasawahan 08</h4>
+      <p>
+        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
+        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontak Sekolah</h4>
+      <ul>
+        <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
+        <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
+        <li>Email: pasawahan08@yahoo.com</li>
+        <li>Telp: -</li>
+      </ul>
+    </div>
+  </div>
+
+    <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+    const links = document.querySelectorAll('#navMenu a');
+    const navHeight = document.querySelector('nav').offsetHeight;
+    const sections = document.querySelectorAll('section, .hero');
+
+    // Toggle hamburger
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Klik menu → aktif & tutup menu (mobile)
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        menu.classList.remove('active');
+      });
+    });
+
+    // Active menu saat scroll
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+      // Sticky shadow effect
+      if (window.scrollY > 10) {
+        document.querySelector('nav').classList.add('scrolled');
+      } else {
+        document.querySelector('nav').classList.remove('scrolled');
+      }
+    });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+  </script>
+
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
+
+</body>
+</html>

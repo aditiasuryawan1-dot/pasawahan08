@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rrel="stylesheet" href="js/script.js">
+</head>
+<body>
+        <!-- NAVBAR -->
+  <nav>
+    <div class="nav-brand">SDN Pasawahan 08</div>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <ul id="navMenu">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="profil.html">Profil</a></li>
+      <li><a href="struktur.html">Struktur</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="pengumuman.html">Pengumuman</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="kaldik.html">Kaldik</a></li>
+      <li><a href="weblink.html">Weblink</a></li>
+      <li><a href="ppdb.html">PPDB</a></li>
+    </ul>
+  </nav>
+
+  <section id="profil">
+    <h2>Profil Sekolah</h2>
+
+    <div class="card">
+      <h3>Visi</h3>
+      <p>
+        Terwujudnya peserta didik yang <strong>beriman dan bertakwa</strong>,
+        <strong>berakhlak mulia</strong>, <strong>beradab</strong>,
+        <strong>cerdas</strong>, <strong>berketerampilan</strong>,
+        serta <strong>mampu beradaptasi dengan perkembangan teknologi</strong>
+        untuk meraih <strong>prestasi dunia dan akhirat</strong>.
+      </p>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>Misi</h3>
+      <ul style="line-height:1.8; padding-left:18px;">
+        <li>Menanamkan nilai keimanan, ketakwaan, dan akhlak mulia dalam setiap kegiatan pembelajaran.</li>
+        <li>Mengembangkan budaya disiplin, santun, dan beradab di lingkungan sekolah.</li>
+        <li>Menyelenggarakan pembelajaran yang aktif, kreatif, dan inovatif.</li>
+        <li>Meningkatkan keterampilan peserta didik sesuai bakat dan minat.</li>
+        <li>Memanfaatkan teknologi secara bijak dalam proses pembelajaran.</li>
+        <li>Mendorong prestasi akademik dan non-akademik secara berkelanjutan.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <h3>Tujuan</h3>
+      <ul style="line-height:1.8; padding-left:18px;">
+        <li>Membentuk karakter peserta didik yang berakhlak mulia dan beradab.</li>
+        <li>Meningkatkan kemampuan literasi, numerasi, dan teknologi.</li>
+        <li>Menciptakan lingkungan belajar yang aman, nyaman, dan religius.</li>
+        <li>Menghasilkan lulusan yang percaya diri, mandiri, dan berprestasi.</li>
+        <li>Menyiapkan peserta didik agar siap melanjutkan pendidikan ke jenjang berikutnya.</li>
+      </ul>
+    </div>
+  </section>
+
+   <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>SDN Pasawahan 08</h4>
+      <p>
+        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
+        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Kontak Sekolah</h4>
+      <ul>
+        <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
+        <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
+        <li>Email: pasawahan08@yahoo.com</li>
+        <li>Telp: -</li>
+      </ul>
+    </div>
+  </div>
+
+    <script>
+    const toggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('navMenu');
+    const links = document.querySelectorAll('#navMenu a');
+    const navHeight = document.querySelector('nav').offsetHeight;
+    const sections = document.querySelectorAll('section, .hero');
+
+    // Toggle hamburger
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+
+    // Klik menu → aktif & tutup menu (mobile)
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        menu.classList.remove('active');
+      });
+    });
+
+    // Active menu saat scroll
+    window.addEventListener('scroll', () => {
+      let current = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+      // Sticky shadow effect
+      if (window.scrollY > 10) {
+        document.querySelector('nav').classList.add('scrolled');
+      } else {
+        document.querySelector('nav').classList.remove('scrolled');
+      }
+    });
+
+      links.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+
+  </script>
+
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
+
+</body>
+</html>
