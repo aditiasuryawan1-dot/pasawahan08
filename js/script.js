@@ -49,3 +49,45 @@
           link.classList.add('active');
         }
      });
+
+
+let index = 0;
+const slider = document.getElementById("manualSlider");
+const total = slider.children.length;
+let autoSlideTimer;
+
+/* === Update posisi === */
+function updateSlide() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+/* === Next === */
+function nextSlide() {
+    index = (index + 1) % total;
+    updateSlide();
+    resetAutoSlide();
+}
+
+/* === Prev === */
+function prevSlide() {
+    index = (index - 1 + total) % total;
+    updateSlide();
+    resetAutoSlide();
+}
+
+/* === Auto === */
+function startAutoSlide() {
+    autoSlideTimer = setInterval(() => {
+        index = (index + 1) % total;
+        updateSlide();
+    }, 4000); // 4 detik
+}
+
+/* === Reset saat manual === */
+function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    startAutoSlide();
+}
+
+/* === Start on load === */
+startAutoSlide();
