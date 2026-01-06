@@ -26,19 +26,64 @@
     </ul>
   </nav>
 
-    <script>
-    const toggle = document.getElementById('menuToggle');
+  <div class="hero" id="home">
+    <div class="hero-wrapper">
+      <div class="kepsek">
+        <img src="assets/guru/ibu.png" alt="Kepala Sekolah SDN Pasawahan 08">
+      </div>
+      <div class="hero-text">
+        <h1>SDN Pasawahan 08</h1>
+        <p class="tagline">
+          Membangun generasi <strong>berakhlak mulia</strong>, <strong>beradab</strong>,
+          <strong>berilmu</strong>, <strong>berteknologi</strong>, dan
+          <strong>berketerampilan</strong>, untuk meraih
+          <strong>prestasi dunia dan akhirat</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>SDN Pasawahan 08</h4>
+      <h4>NPSN: 20205309 </h4>
+      <p>
+        Membangun generasi berakhlak mulia, beradab,
+          berilmu, berteknologi, dan
+          berketerampilan, untuk meraih
+          prestasi dunia dan akhirat.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <ul>
+        <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
+        <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
+        <li>Email: pasawahan08@yahoo.com</li>
+        <li>Telp: 085961942030 / 08776028692 </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
+
+  <script>
+
+        const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('navMenu');
     const links = document.querySelectorAll('#navMenu a');
     const navHeight = document.querySelector('nav').offsetHeight;
     const sections = document.querySelectorAll('section, .hero');
 
-    // Toggle hamburger
     toggle.addEventListener('click', () => {
       menu.classList.toggle('active');
     });
 
-    // Klik menu → aktif & tutup menu (mobile)
+    
     links.forEach(link => {
       link.addEventListener('click', () => {
         links.forEach(l => l.classList.remove('active'));
@@ -46,8 +91,8 @@
         menu.classList.remove('active');
       });
     });
+    
 
-    // Active menu saat scroll
     window.addEventListener('scroll', () => {
       let current = '';
 
@@ -56,75 +101,31 @@
         if (pageYOffset >= sectionTop) {
           current = section.getAttribute('id');
         }
-      });
+    });
+});
+  
 
       links.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
-      });
-
-      // Sticky shadow effect
-      if (window.scrollY > 10) {
+    });
+  
+    if (window.scrollY > 10) {
         document.querySelector('nav').classList.add('scrolled');
       } else {
         document.querySelector('nav').classList.remove('scrolled');
       }
-    });
 
-      links.forEach(link => {
+     links.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
-      });
-
+     });
+     
   </script>
-
-
-    <div class="hero" id="home">
-    <div class="hero-wrapper">
-      <div class="kepsek">
-        <img src="kepsek.jpg" alt="Kepala Sekolah SDN Pasawahan 08" />
-      </div>
-      <div class="hero-text">
-        <h1>SDN Pasawahan 08</h1>
-        <p class="tagline">
-          Membangun generasi <strong>berakhlak mulia</strong>, <strong>beradab</strong>,
-          <strong>berilmu</strong>, <strong>berteknologi</strong>, dan
-          <strong>berketerampilan</strong>, demi meraih
-          <strong>prestasi dunia dan akhirat</strong>.
-        </p>
-      </div>
-    </div>
-  </div>
-
-   <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h4>SDN Pasawahan 08</h4>
-      <p>
-        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
-        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
-      </p>
-    </div>
-
-    <div class="footer-col">
-      <h4>Kontak Sekolah</h4>
-      <ul>
-        <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
-        <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
-        <li>Email: pasawahan08@yahoo.com</li>
-        <li>Telp: -</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
-  </div>
-</footer>
+  
 </body>
 </html>
