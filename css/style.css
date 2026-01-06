@@ -409,63 +409,114 @@
 }
 
 /* FORM */
-.ppdb-form {
+/* PPDB */
+.ppdb-card {
+  max-width: 800px;
+  margin: auto;
   background: #fff;
+  border-radius: 16px;
   padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
-.ppdb-form h3 {
-  text-align: center;
-  color: #004aad;
+.ppdb-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 25px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.ppdb-icon {
+  font-size: 36px;
+  background: linear-gradient(135deg,#0b5ed7,#f7931e);
+  color: white;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.ppdb-header h3 {
+  margin: 0;
+  color: #0b5ed7;
+}
+
+.ppdb-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* GRID FORM */
+.ppdb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
+  font-size: 14px;
   font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
+  color: #333;
 }
 
 .form-group input,
 .form-group textarea {
-  width: 100%;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-.form-group textarea {
-  resize: vertical;
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0b5ed7;
 }
 
+/* BUTTON */
 .btn-ppdb {
   width: 100%;
-  background: linear-gradient(45deg, #004aad, #ff7a00);
-  color: #fff;
+  margin-top: 20px;
   padding: 14px;
+  background: linear-gradient(90deg,#0b5ed7,#f7931e);
   border: none;
-  border-radius: 30px;
+  color: white;
   font-size: 16px;
   font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
+  transition: .3s;
 }
 
 .btn-ppdb:hover {
   opacity: .9;
+  transform: translateY(-2px);
 }
 
 /* NOTE */
 .ppdb-note {
-  margin-top: 20px;
-  background: #eaf1ff;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 14px;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #555;
+  text-align: center;
 }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ppdb-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ppdb-card {
+    padding: 20px;
+  }
+}
+
 
