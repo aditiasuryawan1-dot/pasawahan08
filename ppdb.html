@@ -26,16 +26,17 @@
     </ul>
   </nav>
 
-<section id="ppdb" class="section ppdb-section">
-  <div class="ppdb-container">
+<section id="ppdb">
+  <h2>Penerimaan Peserta Didik Baru</h2>
 
+  <div class="ppdb-card">
     <div class="ppdb-header">
-      <h2>Penerimaan Peserta Didik Baru</h2>
-      <p class="ppdb-tagline">
-        “Membentuk Generasi Berakhlak, Berilmu, dan Berprestasi”
-      </p>
+      <span class="ppdb-icon">📝</span>
+      <div>
+        <h3>Formulir PPDB</h3>
+        <p>“Membentuk Generasi Berakhlak, Berilmu, dan Berprestasi”</p>
+      </div>
     </div>
-
     <!-- INFO -->
     <div class="ppdb-info">
       <div class="info-card">
@@ -48,86 +49,81 @@
       </div>
       <div class="info-card">
         <h4>📞 Kontak</h4>
-        <p>085961942030 / 08776028692</p>
+        <p>085961942030  08776028692</p>
       </div>
     </div>
 
-    <!-- FORM -->
-    <form id="ppdbForm" class="ppdb-form">
-      <h3>Form Pendaftaran</h3>
+<form class="ppdb-form" onsubmit="kirimPPDB(event)">
 
-      <div class="form-group">
-        <label>Nama Lengkap Siswa</label>
-        <input type="text" id="nama" required>
+      <div class="ppdb-grid">
+        <div class="form-group">
+          <label>Nama Calon Siswa</label>
+          <input type="text" id="nama_siswa" required>
+        </div>
+
+        <div class="form-group">
+          <label>Tempat, Tanggal Lahir</label>
+          <input type="text" id="ttl" required>
+        </div>
+
+        <div class="form-group">
+          <label>Nama Orang Tua / Wali</label>
+          <input type="text" id="orang_tua" required>
+        </div>
+
+        <div class="form-group">
+          <label>No WhatsApp Aktif</label>
+          <input type="text" id="wa" placeholder="08xxxxxxxxxx" required>
+        </div>
       </div>
 
       <div class="form-group">
-        <label>NISN</label>
-        <input type="text" id="nisn">
-      </div>
-
-      <div class="form-group">
-        <label>Tempat, Tanggal Lahir</label>
-        <input type="text" id="ttl" required>
-      </div>
-
-      <div class="form-group">
-        <label>Asal Sekolah</label>
-        <input type="text" id="asal">
-      </div>
-
-      <div class="form-group">
-        <label>Nama Orang Tua / Wali</label>
-        <input type="text" id="ortu" required>
-      </div>
-
-      <div class="form-group">
-        <label>No. WhatsApp</label>
-        <input type="tel" id="hp" required>
-      </div>
-
-      <div class="form-group">
-        <label>Alamat</label>
-        <textarea id="alamat"></textarea>
+        <label>Alamat Lengkap</label>
+        <textarea id="alamat" rows="3" required></textarea>
       </div>
 
       <button type="submit" class="btn-ppdb">
-        Kirim Pendaftaran via WhatsApp
+        📲 Kirim Pendaftaran via WhatsApp
       </button>
-    </form>
 
-    <!-- CATATAN -->
-    <div class="ppdb-note">
-      <p>
-        📎 Berkas persyaratan diunggah melalui Google Drive.  
-        Link akan dikirimkan setelah pendaftaran via WhatsApp.
+      <p class="ppdb-note">
+        Setelah mengirim formulir, panitia akan membalas melalui WhatsApp
+        dan mengirimkan <strong>link Google Drive</strong> untuk upload berkas.
       </p>
-    </div>
-
+    </form>
   </div>
 </section>
 
 
- <footer class="footer">
+
+
+<footer class="footer">
   <div class="footer-container">
     <div class="footer-col">
       <h4>SDN Pasawahan 08</h4>
+      <h4>NPSN: 20205309 </h4>
       <p>
-        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
-        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
+        Membangun generasi berakhlak mulia, beradab,
+          berilmu, berteknologi, dan
+          berketerampilan, untuk meraih
+          prestasi dunia dan akhirat.
       </p>
     </div>
 
     <div class="footer-col">
-      <h4>Kontak Sekolah</h4>
       <ul>
         <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
         <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
         <li>Email: pasawahan08@yahoo.com</li>
-        <li>Telp: -</li>
+        <li>Telp: 085961942030 / 08776028692 </li>
       </ul>
     </div>
   </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
 
     <script>
     const toggle = document.getElementById('menuToggle');
@@ -183,13 +179,48 @@
         }
       });
 
-  </script>
+      //kirim ppdb
 
-  <div class="footer-bottom">
-    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
-  </div>
-</footer>
+
+function kirimPPDB(e) {
+  e.preventDefault();
+
+  const nama   = document.getElementById("nama_siswa").value;
+  const ttl    = document.getElementById("ttl").value;
+  const ortu   = document.getElementById("orang_tua").value;
+  const alamat = document.getElementById("alamat").value;
+  const wa     = document.getElementById("wa").value;
+
+  const noSekolah = "+6285961942030"; 
+  // ☝️ ganti dengan nomor WA panitia PPDB
+
+  const pesan =
+`PENDAFTARAN PPDB SDN PASAWAHAN 08
+
+Nama Calon Siswa:
+${nama}
+
+TTL:
+${ttl}
+
+Nama Orang Tua/Wali:
+${ortu}
+
+Alamat:
+${alamat}
+
+No WA Pendaftar:
+${wa}
+
+Mohon informasi lanjutan PPDB.
+Terima kasih.`;
+
+  const url = "https://wa.me/" + noSekolah + "?text=" + encodeURIComponent(pesan);
+
+  window.open(url, "_blank");
+}
+
+</script>
 
 </body>
-
 </html>
