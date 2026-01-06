@@ -33,11 +33,11 @@
       <div class="card berita-item">
         <img src="berita1.jpg" alt="Kegiatan Upacara" class="berita-img">
         <div class="berita-body">
-          <div class="tanggal">5 Januari 2026</div>
+          <div class="tanggal">12 Januari 2026</div>
           <h4>Pelaksanaan Upacara Bendera Awal Semester</h4>
           <p>
-            SDN Pasawahan 08 melaksanakan upacara bendera sebagai tanda dimulainya
-            kegiatan belajar mengajar semester genap dengan penuh khidmat dan disiplin.
+            SDN Pasawahan 08 melaksanakan kegiatan pagi ceria dan upacara bendera sebagai tanda dimulainya
+            kegiatan belajar mengajar semester genap.
           </p>
         </div>
       </div>
@@ -45,7 +45,7 @@
       <div class="card berita-item">
         <img src="berita2.jpg" alt="Kegiatan Literasi" class="berita-img">
         <div class="berita-body">
-          <div class="tanggal">8 Januari 2026</div>
+          <div class="tanggal">12 Januari 2026</div>
           <h4>Gerakan Literasi Sekolah</h4>
           <p>
             Peserta didik mengikuti kegiatan literasi untuk meningkatkan minat baca,
@@ -68,39 +68,47 @@
     </div>
   </section>
 
-  <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
     <div class="footer-col">
       <h4>SDN Pasawahan 08</h4>
+      <h4>NPSN: 20205309 </h4>
       <p>
-        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
-        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
+        Membangun generasi berakhlak mulia, beradab,
+          berilmu, berteknologi, dan
+          berketerampilan, untuk meraih
+          prestasi dunia dan akhirat.
       </p>
     </div>
 
     <div class="footer-col">
-      <h4>Kontak Sekolah</h4>
       <ul>
         <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
         <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
         <li>Email: pasawahan08@yahoo.com</li>
-        <li>Telp: -</li>
+        <li>Telp: 085961942030 / 08776028692 </li>
       </ul>
     </div>
+  </div>
 
-      <script>
-    const toggle = document.getElementById('menuToggle');
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
+
+  <script>
+
+        const toggle = document.getElementById('menuToggle');
     const menu = document.getElementById('navMenu');
     const links = document.querySelectorAll('#navMenu a');
     const navHeight = document.querySelector('nav').offsetHeight;
     const sections = document.querySelectorAll('section, .hero');
 
-    // Toggle hamburger
     toggle.addEventListener('click', () => {
       menu.classList.toggle('active');
     });
 
-    // Klik menu → aktif & tutup menu (mobile)
+    
     links.forEach(link => {
       link.addEventListener('click', () => {
         links.forEach(l => l.classList.remove('active'));
@@ -108,8 +116,8 @@
         menu.classList.remove('active');
       });
     });
+    
 
-    // Active menu saat scroll
     window.addEventListener('scroll', () => {
       let current = '';
 
@@ -118,37 +126,31 @@
         if (pageYOffset >= sectionTop) {
           current = section.getAttribute('id');
         }
-      });
+    });
+});
+  
 
       links.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
-      });
-
-      // Sticky shadow effect
-      if (window.scrollY > 10) {
+    });
+  
+    if (window.scrollY > 10) {
         document.querySelector('nav').classList.add('scrolled');
       } else {
         document.querySelector('nav').classList.remove('scrolled');
       }
-    });
 
-      links.forEach(link => {
+     links.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
           link.classList.add('active');
         }
-      });
-
+     });
+     
   </script>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
-  </div>
-</footer>
 
 </body>
 </html>
