@@ -172,70 +172,93 @@
       margin-top: 40px;
     }
 
-   /* GALERI SLIDER */
-.galeri-slider {
-  overflow: hidden;
-  max-width: 1000px;
-  margin: auto;
+/* ===== SLIDER MANUAL ===== */
+.slider-manual {
+    position: relative;
+    width: 70%;
+    max-width: 600px;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
 }
 
-.galeri-track {
-  display: flex;
-  gap: 20px;
-  animation: slideGaleri 10s linear infinite;
-
+.slider-window {
+    overflow: hidden;
+    width: 70%;
+    border-radius: 12px;
 }
 
-/* CARD */
-.galeri-card {
-  min-width: 300px;
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(0,0,0,.15);
-  overflow: hidden;
-  flex-shrink: 0;
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-/* FOTO MASUK PENUH */
-.galeri-card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover; /* INI KUNCI */
-  display: block;
+.slider-track img {
+    width: 100%;
+    flex-shrink: 0;
+    height: 350px;
+    object-fit: cover;
 }
 
-/* CAPTION */
-.galeri-card p {
-  padding: 12px;
-  text-align: center;
-  font-weight: bold;
-  color: #004aad;
-  background: #f8f9fa;
+.nav {
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 28px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
-/* ANIMASI */
-@keyframes slideGaleri {
-  0%   { transform: translateX(0); }
-  10% { transform: translateX(-10%); }
-  20%   { transform: translateX(-25%);}
-  30% { transform: translateX(-30%);}
-  50% { transform: translateX(-50%);}
-  100% { transform: translateX(-100%);}
-  150% { transform: translateX(-150%);}
-  200% { transform: translateX(-200%);}
-
+/* ===== SLIDER AUTO ===== */
+.slider-auto {
+    overflow: hidden;
+    background: #f5f5f5;
+    padding: 20px 0;
 }
 
-/* MOBILE */
+.auto-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+}
+
+.auto-track img {
+    width: 200px;
+    height: 240px;
+    margin-right: 15px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
-  .galeri-card {
-    min-width: 260px;
-  }
-
-  .galeri-card img {
-    height: 180px;
-  }
+    .slider-track img {
+        height: 300px;
+    }
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+    .slider-track img {
+        height: 220px;
+        border-radius: 10px;
+    }
+        .nav {
+        font-size: 22px;
+        padding: 8px 12px;
+    }
+}
+
 
 
     /* PENGUMUMAN */
@@ -445,3 +468,4 @@
   border-radius: 10px;
   font-size: 14px;
 }
+
