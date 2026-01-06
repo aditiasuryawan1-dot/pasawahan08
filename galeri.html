@@ -6,77 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="js/script.js">
-
-        <style>
-  /* ===== SLIDER MANUAL ===== */
-.slider-manual {
-    position: relative;
-    width: 50%;
-    max-width: 900px;
-    margin: 40px auto;
-    display: flex;
-    align-items: center;
-}
-
-.slider-window {
-    overflow: hidden;
-    width: 100%;
-    border-radius: 12px;
-}
-
-.slider-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.slider-track img {
-    width: 100%;
-    flex-shrink: 0;
-    height: 400PX;
-    object-fit: cover;
-}
-
-.nav {
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    font-size: 28px;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-/* ===== SLIDER AUTO ===== */
-.slider-auto {
-    overflow: hidden;
-    background: #f5f5f5;
-    padding: 20px 0;
-}
-
-.auto-track {
-    display: flex;
-    width: max-content;
-    animation: scroll 25s linear infinite;
-}
-
-.auto-track img {
-    width: 200px;
-    height: 180px;
-    margin-right: 15px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-</style>
-
 </head>
 <body>
      <!-- NAVBAR -->
@@ -109,8 +38,6 @@
                 <img src="assets/galeri/juara2.jpeg">
                 <img src="assets/galeri/juara.jpeg">
                 <img src="assets/galeri/piala.jpeg">
-
-
             </div>
         </div>
 
@@ -146,70 +73,34 @@
             <img src="assets/galeri/tari.jpeg">
         </div>
     </section>
-   <script>
-let index = 0;
-const slider = document.getElementById("manualSlider");
-const total = slider.children.length;
-let autoSlideTimer;
 
-/* === Update posisi === */
-function updateSlide() {
-    slider.style.transform = `translateX(-${index * 100}%)`;
-}
-
-/* === Next === */
-function nextSlide() {
-    index = (index + 1) % total;
-    updateSlide();
-    resetAutoSlide();
-}
-
-/* === Prev === */
-function prevSlide() {
-    index = (index - 1 + total) % total;
-    updateSlide();
-    resetAutoSlide();
-}
-
-/* === Auto === */
-function startAutoSlide() {
-    autoSlideTimer = setInterval(() => {
-        index = (index + 1) % total;
-        updateSlide();
-    }, 4000); // 4 detik
-}
-
-/* === Reset saat manual === */
-function resetAutoSlide() {
-    clearInterval(autoSlideTimer);
-    startAutoSlide();
-}
-
-/* === Start on load === */
-startAutoSlide();
-</script>
-
-   <footer class="footer">
+<footer class="footer">
   <div class="footer-container">
     <div class="footer-col">
       <h4>SDN Pasawahan 08</h4>
+      <h4>NPSN: 20205309 </h4>
       <p>
-        Mewujudkan generasi yang beriman, berakhlak mulia, berilmu,
-        berteknologi, dan berprestasi dalam bingkai nilai kebangsaan.
+        Membangun generasi berakhlak mulia, beradab,
+          berilmu, berteknologi, dan
+          berketerampilan, untuk meraih
+          prestasi dunia dan akhirat.
       </p>
     </div>
 
     <div class="footer-col">
-      <h4>Kontak Sekolah</h4>
       <ul>
         <li>Alamat: Jl. Moch Toha, KM. 6,8 RT/RW. 03/03, Kel. Pasawahan</li>
         <li>Kec. Dayeuhkolot, Kabupaten Badung, Jawa Barat 40256</li>
         <li>Email: pasawahan08@yahoo.com</li>
-        <li>Telp: -</li>
+        <li>Telp: 085961942030 / 08776028692 </li>
       </ul>
     </div>
-
   </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
+  </div>
+</footer>
 
     <script>
     const toggle = document.getElementById('menuToggle');
@@ -233,6 +124,33 @@ startAutoSlide();
     });
 
     // Active menu saat scroll
+
+let index = 0;
+const slider = document.getElementById("manualSlider");
+const total = slider.children.length;
+
+function updateSlide() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide() {
+    index = (index + 1) % total;
+    updateSlide();
+}
+
+function prevSlide() {
+    index = (index - 1 + total) % total;
+    updateSlide();
+}
+
+
+
+
+
+
+
+
+
     window.addEventListener('scroll', () => {
       let current = '';
 
@@ -267,10 +185,6 @@ startAutoSlide();
 
   </script>
 
-  <div class="footer-bottom">
-    <p>© 2026 SDN Pasawahan 08. Seluruh hak cipta dilindungi.</p>
-  </div>
-</footer>
-
 </body>
+</html>
 </html>
