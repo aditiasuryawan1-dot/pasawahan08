@@ -440,7 +440,6 @@
 .ppdb-header h3 {
   margin: 0;
   color: #0b5ed7;
-  text-align: left;
 }
 
 .ppdb-header p {
@@ -520,6 +519,7 @@
     padding: 20px;
   }
 }
+
 
 
 
